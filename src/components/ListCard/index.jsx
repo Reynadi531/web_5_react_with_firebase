@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Button } from "../Button";
 
 export const ListCard = ({ id, heading, description, createdAt, onDelete }) => {
   return (
@@ -12,20 +13,14 @@ export const ListCard = ({ id, heading, description, createdAt, onDelete }) => {
             Created at: {new Date(createdAt).toLocaleString()}
           </p>
           <div className="flex gap-2">
-            <button
-              href="#"
-              className="rounded-lg bg-blue-500 px-4 py-2 text-white"
-            >
-              Edit
-            </button>
-            <button
+            <Button color="blue" onClick={() => {}} message={"Edit"} />
+            <Button
+              color="red"
               onClick={() => {
                 onDelete(id);
               }}
-              className="rounded-lg bg-red-500 px-4 py-2 text-white"
-            >
-              Delete
-            </button>
+              message={"Delete"}
+            />
           </div>
         </div>
       </div>

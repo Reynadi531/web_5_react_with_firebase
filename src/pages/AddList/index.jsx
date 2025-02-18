@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TaskInput } from "../../components/Input";
+import { Button } from "../../components/Button";
 
 export const AddTodoList = () => {
   const navigate = useNavigate();
@@ -68,19 +69,13 @@ export const AddTodoList = () => {
         />
         {/* Buttons */}
         <div className="flex justify-end gap-2">
-          <button
+          <Button
             type="button"
-            className="rounded-lg bg-red-500 px-6 py-2 text-white"
+            color="red"
+            message="Cancel"
             onClick={() => navigate("/")}
-          >
-            Cancel
-          </button>
-          <button
-            type="submit"
-            className="rounded-lg bg-green-500 px-6 py-2 text-white"
-          >
-            Save
-          </button>
+          />
+          <Button type="submit" color="green" message="Save" />
         </div>
       </form>
     </div>

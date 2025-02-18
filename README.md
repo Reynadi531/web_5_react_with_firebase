@@ -1,6 +1,6 @@
 # Hello Member Web Development GDGOC Telkom University Bandung! 👋
 
-sebelumnya kalian bisa `git clone https://github.com/mahesabagusr/intemediate-javascript.git` pada cmd kalian, agar kode ini dapat di jalankan di komputer/laptop kalian, jika mengalami kendala, kalian bisa menonton video tutorial berikut : [Tonton Disini](https://www.youtube.com/watch?v=EhxPBMQFCaI)
+sebelumnya kalian bisa `git clone https://github.com/GDGoCTelu/study-group-6-Web-Developement-React-with-Tailwind.git` pada cmd kalian, agar kode ini dapat di jalankan di komputer/laptop kalian, jika mengalami kendala, kalian bisa menonton video tutorial berikut : [Tonton Disini](https://www.youtube.com/watch?v=EhxPBMQFCaI)
 
 agar kalian dapat menjalankan program diatas, kalian bisa download dan install _Node.js versi 22.13.1 (LTS)_ terlebih dahulu melalui link berikut : [Download Disini](https://nodejs.org/en/download). Jika kalian mengalami kendala, bisa menonton video tutorial berikut : [Tonton Disini](https://www.youtube.com/watch?v=mzg1TNVUNtM)
 

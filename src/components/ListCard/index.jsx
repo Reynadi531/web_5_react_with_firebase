@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export const ListCard = ({ heading, description, createdAt, onDelete }) => {
+export const ListCard = ({ id, heading, description, createdAt, onDelete }) => {
   return (
     <div className="h-full w-full rounded-lg bg-white shadow-lg">
       <div className="p-4">
@@ -19,7 +19,9 @@ export const ListCard = ({ heading, description, createdAt, onDelete }) => {
               Edit
             </button>
             <button
-              onClick={onDelete}
+              onClick={() => {
+                onDelete(id);
+              }}
               className="rounded-lg bg-red-500 px-4 py-2 text-white"
             >
               Delete
@@ -32,6 +34,7 @@ export const ListCard = ({ heading, description, createdAt, onDelete }) => {
 };
 
 ListCard.propTypes = {
+  id: PropTypes.number.isRequired,
   heading: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   createdAt: PropTypes.number.isRequired,

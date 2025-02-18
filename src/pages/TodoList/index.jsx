@@ -15,9 +15,10 @@ export const TodoList = () => {
   }, []);
 
   const handleDelete = (id) => {
-    const updateList = list.filter((list) => list.id == id);
-    setList(updateList);
-    localStorage.setItem("tasks", JSON.stringify(updateList));
+    const updatedList = list.filter((item) => item.id !== id);
+    console.log(updatedList);
+    setList(updatedList);
+    localStorage.setItem("tasks", JSON.stringify(updatedList));
   };
 
   return (

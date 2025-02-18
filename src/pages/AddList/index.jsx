@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { TaskInput } from "../../components/Input";
 
 export const AddTodoList = () => {
   const navigate = useNavigate();
@@ -52,34 +53,19 @@ export const AddTodoList = () => {
       <h2 className="mb-4 text-xl font-semibold">Add New Task</h2>
       <form onSubmit={handleSubmit}>
         {/* Heading Input */}
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            Heading
-          </label>
-          <input
-            type="text"
-            name="heading"
-            value={task.heading}
-            onChange={handleInputChange}
-            className="mt-1 w-full rounded-lg border border-blue-700 p-2"
-            placeholder="Enter task heading"
-          />
-        </div>
-
+        <TaskInput
+          name={"heading"}
+          value={task.heading}
+          onChange={handleInputChange}
+          placeholder={"Please Input Heading"}
+        />
         {/* Description Input */}
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            Description
-          </label>
-          <textarea
-            name="description"
-            value={task.description}
-            onChange={handleInputChange}
-            className="mt-1 w-full rounded-lg border border-blue-700 p-2"
-            placeholder="Enter task description"
-          />
-        </div>
-
+        <TaskInput
+          name={"description"}
+          value={task.description}
+          onChange={handleInputChange}
+          placeholder={"Please Input Description"}
+        />
         {/* Buttons */}
         <div className="flex justify-end gap-2">
           <button

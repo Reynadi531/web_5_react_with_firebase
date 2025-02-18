@@ -20,30 +20,30 @@ export const AddTodoList = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate form fields
+    // validasi form
     if (!task.heading || !task.description) {
       alert("Harap Isi Form");
       return;
     }
 
-    // Get existing tasks from localStorage or initialize an empty array
+    // get "tasks" dari local storage
     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-    // Create a new task object
+    // task baru
     const newTask = {
-      id: Date.now(), // Use a unique ID (timestamp)
+      id: Date.now(),
       heading: task.heading,
       description: task.description,
       createdAt: Date.now(),
     };
 
-    // Update the tasks array
+    // Update task dengan array
     const updatedTasks = [...tasks, newTask];
 
-    // Save the updated tasks array to localStorage
+    // save update
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
 
-    // Navigate back to the home page
+    // navigate ke todolist
     navigate("/");
   };
 
@@ -83,7 +83,7 @@ export const AddTodoList = () => {
         {/* Buttons */}
         <div className="flex justify-end gap-2">
           <button
-            type="button" // Add type="button" to prevent form submission
+            type="button"
             className="rounded-lg bg-red-500 px-6 py-2 text-white"
             onClick={() => navigate("/")}
           >

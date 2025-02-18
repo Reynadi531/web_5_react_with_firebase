@@ -11,7 +11,7 @@ export const TodoList = () => {
     const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
     console.log(storedTasks);
-    setList(() => [...storedTasks]);
+    setList(storedTasks);
   }, []);
 
   const handleDelete = (id) => {

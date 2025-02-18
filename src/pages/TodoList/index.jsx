@@ -1,4 +1,4 @@
-import { ListCard } from "../../components/ListCard";
+import { ListCard } from "../../components/Card";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 

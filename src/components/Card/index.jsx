@@ -7,9 +7,8 @@ export const ListCard = ({ id, heading, description, createdAt, onDelete }) => {
       <div className="p-4">
         <h2 className="mb-2 text-xl font-semibold">{heading}</h2>
         <p className="text-gray-700">{description}</p>
-
-        <div className="mt-4 flex h-full flex-row gap-2">
-          <p className="flex-1 text-left align-middle text-sm text-gray-500">
+        <div className="mt-4 flex h-full flex-row items-center gap-2">
+          <p className="flex-1 text-left text-sm text-gray-500">
             Created at: {new Date(createdAt).toLocaleString()}
           </p>
           <div className="flex gap-2">

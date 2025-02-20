@@ -22,12 +22,6 @@ export const AddTodoList = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // validasi form
-    if (!task.heading || !task.description) {
-      alert("Harap Isi Form");
-      return;
-    }
-
     // get "tasks" dari local storage
     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
@@ -48,6 +42,9 @@ export const AddTodoList = () => {
     // navigate ke todolist
     navigate("/");
   };
+
+  const isFormValid =
+    task.heading.trim() !== "" && task.description.trim() !== "";
 
   return (
     <div className="m-12 rounded-lg bg-white p-6 shadow-md">
@@ -77,7 +74,12 @@ export const AddTodoList = () => {
             message="Cancel"
             onClick={() => navigate("/")}
           />
-          <Button type="submit" color="green" message="Save" />
+          <Button
+            type="submit"
+            color="green"
+            message="Save"
+            disabled={!isFormValid}
+          />
         </div>
       </form>
     </div>

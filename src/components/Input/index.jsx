@@ -1,12 +1,14 @@
 import PropTypes from "prop-types";
 
-export const TaskInput = ({ name, placeholder, value, onChange }) => {
+export const TaskInput = ({ name, placeholder, value, onChange, label }) => {
   return (
     <div className="mb-4">
-      <label className="block text-sm font-medium text-gray-700">
-        Description
-      </label>
-      <textarea
+      {label && (
+        <label className="block text-sm font-medium text-gray-700">
+          {label}
+        </label>
+      )}
+      <input
         name={name}
         value={value}
         onChange={onChange}
@@ -21,5 +23,6 @@ TaskInput.propTypes = {
   value: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };

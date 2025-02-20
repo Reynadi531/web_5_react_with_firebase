@@ -55,17 +55,19 @@ export const AddTodoList = () => {
       <form onSubmit={handleSubmit}>
         {/* Heading Input */}
         <TaskInput
-          name={"heading"}
+          name="heading"
+          label="Heading"
           value={task.heading}
           onChange={handleInputChange}
-          placeholder={"Please Input Heading"}
+          placeholder="Please Input Heading"
         />
         {/* Description Input */}
         <TaskInput
-          name={"description"}
+          name="description"
+          label="Description"
           value={task.description}
           onChange={handleInputChange}
-          placeholder={"Please Input Description"}
+          placeholder="Please Input Description"
         />
         {/* Buttons */}
         <div className="flex justify-end gap-2">

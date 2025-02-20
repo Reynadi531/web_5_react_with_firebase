@@ -12,13 +12,13 @@ export const ListCard = ({ id, heading, description, createdAt, onDelete }) => {
             Created at: {new Date(createdAt).toLocaleString()}
           </p>
           <div className="flex gap-2">
-            <Button color="blue" onClick={() => {}} message={"Edit"} />
+            <Button color="blue" onClick={() => {}} message="Edit" />
             <Button
               color="red"
               onClick={() => {
                 onDelete(id);
               }}
-              message={"Delete"}
+              message="Delete"
             />
           </div>
         </div>

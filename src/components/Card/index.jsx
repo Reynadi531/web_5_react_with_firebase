@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Button } from "../Button";
 
-export const ListCard = ({ id, heading, description, createdAt, onDelete }) => {
+export const Card = ({ id, heading, description, createdAt, onDelete }) => {
   return (
     <div className="h-full w-full rounded-lg bg-white shadow-lg">
       <div className="p-4">
@@ -27,7 +27,7 @@ export const ListCard = ({ id, heading, description, createdAt, onDelete }) => {
   );
 };
 
-ListCard.propTypes = {
+Card.propTypes = {
   id: PropTypes.number.isRequired,
   heading: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,

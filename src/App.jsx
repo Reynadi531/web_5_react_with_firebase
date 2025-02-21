@@ -4,7 +4,6 @@ import { TodoList } from "./pages/TodoList";
 import { AddTodoList } from "./pages/AddList";
 
 function App() {
-  
   return (
     <Router>
       <Routes>
@@ -16,4 +15,3 @@ function App() {
 }
 
 export default App;
-

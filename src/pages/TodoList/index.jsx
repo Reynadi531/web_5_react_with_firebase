@@ -1,24 +1,37 @@
+import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { Card } from "../../components/Card";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { db } from "../../firebase/config";
 
 export const TodoList = () => {
   const navigate = useNavigate();
-
+  
   const [list, setList] = useState([]);
+  
+  const getData = async() => {
+    const docsRef = collection(db, "todos");
+    const query = await getDocs(docsRef);
+    return query.docs.map((doc) => doc.data());
+  }
+  
+  const deleteData = async(id) => {
+    const query = await deleteDoc(doc(db, "todos", id.toString()));
+    return query;
+  }
 
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
-
-    setList(storedTasks);
+    getData().then((data) => setList(data)).catch((err) => console.error(err));
   }, []);
 
-  const handleDelete = (id) => {
-    const updatedList = list.filter((item) => item.id !== id);
-
-    setList(updatedList);
-
-    localStorage.setItem("tasks", JSON.stringify(updatedList));
+  const handleDelete = async(id) => {
+    try {
+      await deleteData(id);
+      const data = await getData();
+      setList(data);
+    } catch (error) {
+      console.error(error);  
+    }
   };
 
   return (

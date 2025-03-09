@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TaskInput } from "../../components/Input";
 import { Button } from "../../components/Button";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 export const AddTodoList = () => {
   const navigate = useNavigate();
@@ -22,9 +24,6 @@ export const AddTodoList = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // get "tasks" dari local storage
-    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-
     // task baru
     const newTask = {
       id: Date.now(),
@@ -33,14 +32,11 @@ export const AddTodoList = () => {
       createdAt: Date.now(),
     };
 
-    // Update task dengan array
-    const updatedTasks = [...tasks, newTask];
+    // memasukkan task baru
+    setDoc(doc(db, "todos", newTask.id.toString()), newTask).catch((err) => console.error(err));
 
-    // save update
-    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-
-    // navigate ke todolist
-    navigate("/");
+      // navigate ke todolist
+   navigate("/");
   };
 
   const isFormValid =
